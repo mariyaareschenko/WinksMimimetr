@@ -23,6 +23,8 @@ namespace WinksMimimetr
         
         static Dictionary<Image, int> winks;
         static List<Image> images;
+        static int firstInd;
+        static int secondInd;
         public Evaluating(Form1 form)
         {
             InitializeComponent();
@@ -60,8 +62,6 @@ namespace WinksMimimetr
         private void Evaluating_Load(object sender, EventArgs e)
         {
             int count=6;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             images = new List<Image>();
             winks = new Dictionary<Image, int>();//value-кол-во голосов
             for (int i = 0; i < count; i++)
@@ -72,32 +72,58 @@ namespace WinksMimimetr
             {
                 winks.Add(images[i],0);
             }
-            
-            ChooseRandomImg();
+            firstInd = 5;
+            secondInd = 6;///////////////////////////////////
+            Choose(firstInd,secondInd);
         }
-        private void ChooseRandomImg()
+        private void Choose(int firstInd,int secondIndex)
         {
-            Random random = new Random();
-            currentWinks1 = random.Next(images.Count);
-            currentWinks2 = random.Next(images.Count);
-            while (currentWinks2 == currentWinks1)
-            {
-                currentWinks1 = random.Next(images.Count);
-                currentWinks2 = random.Next(images.Count);
-            }
+           
+           currentWinks1 = firstInd;
+           currentWinks2 = secondIndex;
+           
             pictureBox1.Image = GetImage(currentWinks1);
             pictureBox2.Image = GetImage(currentWinks2);
+
+            
         }
         private void nextButton_Click(object sender, EventArgs e)
         {
             if (choosenWinks == null)
             {
-                MessageBox.Show("Вы не выбрали Винкс!");
+                MessageBox.Show("Вы не выбрали фею!");
             }
             else
             {
-                winks[images[choosenWinks.Value]]++;
+                winks[images[choosenWinks.Value-1]]++;
+                choosenWinks = null;
+                panel1.BackColor = DefaultBackColor;
+                panel2.BackColor = DefaultBackColor;
+                if(secondInd<7 && firstInd < 6)
+                {
+                    if (secondInd < 6)
+                    {
+                        secondInd++;
+                    }
+                    else
+                    {
+                        firstInd++;
+                        secondInd = firstInd + 1;
+                    }
+                    
+                    Choose(firstInd, secondInd);
+                }
+                if(secondInd==7 && firstInd == 6)
+                {
+                    MessageBox.Show("rating");
+                    Rating rating = new Rating();
+                    rating.Show();
+                    Close();
+                }
+
+                
             }
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

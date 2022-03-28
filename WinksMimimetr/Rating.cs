@@ -12,9 +12,15 @@ namespace WinksMimimetr
 {
     public partial class Rating : Form
     {
+        
+
         public Rating()
         {
             InitializeComponent();
         }
+
+       
+
+        
     }
 }
