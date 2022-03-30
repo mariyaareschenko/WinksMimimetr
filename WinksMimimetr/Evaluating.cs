@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
+
 namespace WinksMimimetr
 {
     public partial class Evaluating : Form
@@ -72,8 +74,8 @@ namespace WinksMimimetr
             {
                 winks.Add(images[i],0);
             }
-            firstInd = 5;
-            secondInd = 6;///////////////////////////////////
+            firstInd = 4;
+            secondInd = 5;///////////////////////////////////
             Choose(firstInd,secondInd);
         }
         private void Choose(int firstInd,int secondIndex)
@@ -82,8 +84,8 @@ namespace WinksMimimetr
            currentWinks1 = firstInd;
            currentWinks2 = secondIndex;
            
-            pictureBox1.Image = GetImage(currentWinks1);
-            pictureBox2.Image = GetImage(currentWinks2);
+           pictureBox1.Image = GetImage(currentWinks1);
+           pictureBox2.Image = GetImage(currentWinks2);
 
             
         }
@@ -97,8 +99,8 @@ namespace WinksMimimetr
             {
                 winks[images[choosenWinks.Value-1]]++;
                 choosenWinks = null;
-                panel1.BackColor = DefaultBackColor;
-                panel2.BackColor = DefaultBackColor;
+                panel1.BackColor = BackColor;
+                panel2.BackColor = BackColor;
                 if(secondInd<7 && firstInd < 6)
                 {
                     if (secondInd < 6)
@@ -115,29 +117,45 @@ namespace WinksMimimetr
                 }
                 if(secondInd==7 && firstInd == 6)
                 {
-                    MessageBox.Show("rating");
                     Rating rating = new Rating();
                     rating.Show();
-                    Close();
+                    var sort = winks.OrderBy(x => x.Value);
+                    winks = winks.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+                    ICollection<Image> wim = winks.Keys;
+                    List<Image> images = wim.ToList();
+                    var firstWinks = winks.ElementAt(1).Value;
+                    var secondWinks = winks.ElementAt(2).Value;
+                    var thirdWinks = winks.ElementAt(3).Value;
+                    
+                    rating.pictureBox2.Image = GetImage(secondWinks);
+                    Hide();
                 }
-
                 
+               
             }
-            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             choosenWinks = currentWinks1;
-            panel1.BackColor = Color.Pink;
-            panel2.BackColor = DefaultBackColor;
+            panel1.BackColor = Color.DeepPink;
+            panel2.BackColor = BackColor;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             choosenWinks = currentWinks2;
-            panel2.BackColor = Color.Pink;
-            panel1.BackColor = DefaultBackColor;
+            panel2.BackColor = Color.DeepPink;
+            panel1.BackColor = BackColor;
+        }
+
+        private void Evaluating_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form form1 = Application.OpenForms[0];
+            form1.StartPosition = FormStartPosition.Manual;
+            form1.Left = this.Left;
+            form1.Top = this.Top;
+            form1.Show();
         }
     }
 }

@@ -41,7 +41,9 @@ namespace WinksMimimetr
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Evaluating evaluating = new Evaluating(this);
+            Form evaluating = new Evaluating();
+            evaluating.Left = this.Left;
+            evaluating.Top = this.Top;
             /* if(nameTextBox.Text.Equals("Введите имя")|| nameTextBox.Text.Equals(""))
              {
                  MessageBox.Show("Вы не ввели имя!");
@@ -50,9 +52,11 @@ namespace WinksMimimetr
              {*/
                 
                 evaluating.Show();
-                
+
+
             //}
-            
+            this.Hide();
+
             
         }
 
@@ -82,16 +86,6 @@ namespace WinksMimimetr
             con.Close();*/
             
 
-        }
-
-        private void Form1_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
         }
     }
 }

@@ -32,7 +32,6 @@ namespace WinksMimimetr
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nextButton = new System.Windows.Forms.Button();
-            this.backButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,22 +64,15 @@ namespace WinksMimimetr
             // 
             // nextButton
             // 
-            this.nextButton.Location = new System.Drawing.Point(623, 356);
+            this.nextButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.nextButton.ForeColor = System.Drawing.Color.Maroon;
+            this.nextButton.Location = new System.Drawing.Point(345, 361);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(115, 39);
             this.nextButton.TabIndex = 2;
             this.nextButton.Text = "Далее";
-            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.UseVisualStyleBackColor = false;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
-            // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(54, 356);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(115, 39);
-            this.backButton.TabIndex = 3;
-            this.backButton.Text = "Назад";
-            this.backButton.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -104,13 +96,16 @@ namespace WinksMimimetr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.backButton);
             this.Controls.Add(this.nextButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Evaluating";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Evaluating";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Evaluating_FormClosed);
             this.Load += new System.EventHandler(this.Evaluating_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -125,7 +120,6 @@ namespace WinksMimimetr
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
     }

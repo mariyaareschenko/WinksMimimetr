@@ -29,6 +29,7 @@ namespace WinksMimimetr
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.startButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -42,7 +43,7 @@ namespace WinksMimimetr
             // 
             this.nameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.nameTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameTextBox.Location = new System.Drawing.Point(240, 71);
+            this.nameTextBox.Location = new System.Drawing.Point(254, 27);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(273, 22);
             this.nameTextBox.TabIndex = 0;
@@ -56,6 +57,7 @@ namespace WinksMimimetr
             this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.startButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.ForeColor = System.Drawing.Color.Maroon;
             this.startButton.Location = new System.Drawing.Point(2, 2);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(196, 52);
@@ -68,7 +70,7 @@ namespace WinksMimimetr
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.startButton);
-            this.panel1.Location = new System.Drawing.Point(287, 262);
+            this.panel1.Location = new System.Drawing.Point(302, 359);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(2);
             this.panel1.Size = new System.Drawing.Size(200, 56);
@@ -80,9 +82,11 @@ namespace WinksMimimetr
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(543, 119);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(175, 55);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 171);
+            this.pictureBox1.Size = new System.Drawing.Size(448, 298);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -90,16 +94,16 @@ namespace WinksMimimetr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.nameTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Leave += new System.EventHandler(this.Form1_Leave);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
