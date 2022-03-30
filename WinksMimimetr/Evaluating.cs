@@ -119,7 +119,7 @@ namespace WinksMimimetr
                 {
                     Rating rating = new Rating();
                     rating.Show();
-                    var sort = winks.OrderBy(x => x.Value);
+                    
                     winks = winks.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
                     ICollection<Image> wim = winks.Keys;
                     List<Image> images = wim.ToList();
