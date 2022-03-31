@@ -20,41 +20,12 @@ namespace WinksMimimetr
             InitializeComponent();
         }
 
-        private void nameTextBox_Click(object sender, EventArgs e)
-        {
-            if(nameTextBox.Text.Equals("Введите имя"))
-            {
-                nameTextBox.Text = "";
-                nameTextBox.ForeColor = Color.Black;
-            }
-
-        }
-
-        private void nameTextBox_Leave(object sender, EventArgs e)
-        {
-            if (nameTextBox.Text.Equals(""))
-            {
-                nameTextBox.ForeColor = Color.Gray;
-                nameTextBox.Text = "Введите имя";
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form evaluating = new Evaluating();
             evaluating.Left = this.Left;
             evaluating.Top = this.Top;
-            /* if(nameTextBox.Text.Equals("Введите имя")|| nameTextBox.Text.Equals(""))
-             {
-                 MessageBox.Show("Вы не ввели имя!");
-             }
-             else
-             {*/
-                
-                evaluating.Show();
-
-
-            //}
+            evaluating.Show();
             this.Hide();
 
             

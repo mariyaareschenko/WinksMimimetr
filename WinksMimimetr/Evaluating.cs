@@ -74,8 +74,8 @@ namespace WinksMimimetr
             {
                 winks.Add(images[i],0);
             }
-            firstInd = 4;
-            secondInd = 5;///////////////////////////////////
+            firstInd = 1;
+            secondInd = 2;///////////////////////////////////
             Choose(firstInd,secondInd);
         }
         private void Choose(int firstInd,int secondIndex)
@@ -119,16 +119,16 @@ namespace WinksMimimetr
                 {
                     Rating rating = new Rating();
                     rating.Show();
-                    
                     winks = winks.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-                    ICollection<Image> wim = winks.Keys;
-                    List<Image> images = wim.ToList();
-                    var firstWinks = winks.ElementAt(1).Value;
-                    var secondWinks = winks.ElementAt(2).Value;
-                    var thirdWinks = winks.ElementAt(3).Value;
-                    
-                    rating.pictureBox2.Image = GetImage(secondWinks);
-                    Hide();
+                    //Dictionary<int, int> dictionary = new Dictionary<int, int>();
+
+                    var firstWinks = winks.ElementAt(5).Key;
+                    var secondWinks = winks.ElementAt(4).Key;
+                    var thirdWinks = winks.ElementAt(3).Key;
+                    rating.pictureBox1.Image = firstWinks;
+                    rating.pictureBox2.Image = secondWinks;
+                    rating.pictureBox3.Image = thirdWinks;
+                    Close();
                 }
                 
                

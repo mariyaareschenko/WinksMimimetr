@@ -30,37 +30,25 @@ namespace WinksMimimetr
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.startButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.nameTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameTextBox.Location = new System.Drawing.Point(254, 27);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(273, 22);
-            this.nameTextBox.TabIndex = 0;
-            this.nameTextBox.Text = "Введите имя";
-            this.nameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nameTextBox.Click += new System.EventHandler(this.nameTextBox_Click);
-            this.nameTextBox.Leave += new System.EventHandler(this.nameTextBox_Leave);
             // 
             // startButton
             // 
             this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.startButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startButton.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.startButton.ForeColor = System.Drawing.Color.Maroon;
             this.startButton.Location = new System.Drawing.Point(2, 2);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(196, 52);
+            this.startButton.Size = new System.Drawing.Size(191, 47);
             this.startButton.TabIndex = 1;
             this.startButton.Text = "Начать оценку";
             this.startButton.UseVisualStyleBackColor = false;
@@ -70,10 +58,10 @@ namespace WinksMimimetr
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.startButton);
-            this.panel1.Location = new System.Drawing.Point(302, 359);
+            this.panel1.Location = new System.Drawing.Point(286, 387);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(2);
-            this.panel1.Size = new System.Drawing.Size(200, 56);
+            this.panel1.Size = new System.Drawing.Size(195, 51);
             this.panel1.TabIndex = 2;
             // 
             // openFileDialog1
@@ -83,12 +71,23 @@ namespace WinksMimimetr
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(175, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(157, 66);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 298);
+            this.pictureBox1.Size = new System.Drawing.Size(442, 301);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(220, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(312, 35);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Добро пожаловать! ";
             // 
             // Form1
             // 
@@ -96,9 +95,9 @@ namespace WinksMimimetr
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.nameTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -112,12 +111,11 @@ namespace WinksMimimetr
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

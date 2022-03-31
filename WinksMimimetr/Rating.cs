@@ -22,7 +22,7 @@ namespace WinksMimimetr
 
         private void Rating_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form evalForm = Application.OpenForms[1];
+            Form evalForm = Application.OpenForms[0];
             evalForm.StartPosition = FormStartPosition.Manual;
             evalForm.Left = this.Left;
             evalForm.Top = this.Top;
