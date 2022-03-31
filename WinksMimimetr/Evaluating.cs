@@ -74,8 +74,8 @@ namespace WinksMimimetr
             {
                 winks.Add(images[i],0);
             }
-            firstInd = 5;
-            secondInd = 6;///////////////////////////////////
+            firstInd = 1;
+            secondInd = 2;///////////////////////////////////
             Choose(firstInd,secondInd);
         }
         private void Choose(int firstInd,int secondIndex)
