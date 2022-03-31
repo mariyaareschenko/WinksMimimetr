@@ -126,6 +126,7 @@ namespace WinksMimimetr
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Rating";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Rating";

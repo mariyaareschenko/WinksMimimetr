@@ -27,8 +27,6 @@ namespace WinksMimimetr
             evaluating.Top = this.Top;
             evaluating.Show();
             this.Hide();
-
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)

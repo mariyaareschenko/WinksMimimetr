@@ -74,8 +74,8 @@ namespace WinksMimimetr
             {
                 winks.Add(images[i],0);
             }
-            firstInd = 1;
-            secondInd = 2;///////////////////////////////////
+            firstInd = 5;
+            secondInd = 6;///////////////////////////////////
             Choose(firstInd,secondInd);
         }
         private void Choose(int firstInd,int secondIndex)
@@ -118,10 +118,10 @@ namespace WinksMimimetr
                 if(secondInd==7 && firstInd == 6)
                 {
                     Rating rating = new Rating();
+                    rating.Left = this.Left;
+                    rating.Top = this.Top;
                     rating.Show();
                     winks = winks.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-                    //Dictionary<int, int> dictionary = new Dictionary<int, int>();
-
                     var firstWinks = winks.ElementAt(5).Key;
                     var secondWinks = winks.ElementAt(4).Key;
                     var thirdWinks = winks.ElementAt(3).Key;
@@ -149,13 +149,13 @@ namespace WinksMimimetr
             panel1.BackColor = BackColor;
         }
 
-        private void Evaluating_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Form form1 = Application.OpenForms[0];
-            form1.StartPosition = FormStartPosition.Manual;
-            form1.Left = this.Left;
-            form1.Top = this.Top;
-            form1.Show();
-        }
+        //private void Evaluating_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Form form1 = Application.OpenForms[0];
+        //    form1.StartPosition = FormStartPosition.Manual;
+        //    form1.Left = this.Left;
+        //    form1.Top = this.Top;
+        //    form1.Show();
+        //}
     }
 }

@@ -18,15 +18,14 @@ namespace WinksMimimetr
         {
             InitializeComponent();
         }
-        
 
         private void Rating_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Form evalForm = Application.OpenForms[0];
-            evalForm.StartPosition = FormStartPosition.Manual;
-            evalForm.Left = this.Left;
-            evalForm.Top = this.Top;
-            evalForm.Show();
+            Form form = Application.OpenForms[0];
+            form.StartPosition = FormStartPosition.Manual;
+            form.Left = this.Left;
+            form.Top = this.Top;
+            form.Show();
         }
     }
 }
