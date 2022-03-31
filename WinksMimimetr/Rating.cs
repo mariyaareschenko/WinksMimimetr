@@ -18,7 +18,6 @@ namespace WinksMimimetr
         {
             InitializeComponent();
         }
-
         private void Rating_FormClosed(object sender, FormClosedEventArgs e)
         {
             Form form = Application.OpenForms[0];
